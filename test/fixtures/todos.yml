@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nr: 1
+  termin: MyString
+  nazwa: MyString
+  tresc: MyText
+  waznosc: 1
+  stopien_postepu: 1
+
+two:
+  nr: 1
+  termin: MyString
+  nazwa: MyString
+  tresc: MyText
+  waznosc: 1
+  stopien_postepu: 1

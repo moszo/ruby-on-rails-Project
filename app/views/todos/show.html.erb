@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @todo %>
+
+<div>
+  <%= link_to "Edit this task", edit_todo_path(@todo) %> |
+  <%= link_to "Back to list", todos_path %>
+
+  <%= button_to "Destroy this task", @todo, method: :delete %>
+</div>

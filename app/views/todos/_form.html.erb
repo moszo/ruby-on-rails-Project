@@ -1,0 +1,47 @@
+<%= form_with(model: todo) do |form| %>
+  <% if todo.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
+
+      <ul>
+        <% todo.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nr, style: "display: block" %>
+    <%= form.number_field :nr %>
+  </div>
+
+  <div>
+    <%= form.label :termin, style: "display: block" %>
+    <%= form.text_field :termin %>
+  </div>
+
+  <div>
+    <%= form.label :nazwa, style: "display: block" %>
+    <%= form.text_field :nazwa %>
+  </div>
+
+  <div>
+    <%= form.label :tresc, style: "display: block" %>
+    <%= form.text_area :tresc %>
+  </div>
+
+  <div>
+    <%= form.label :waznosc, style: "display: block" %>
+    <%= form.number_field :waznosc %>
+  </div>
+
+  <div>
+    <%= form.label :stopien_postepu, style: "display: block" %>
+    <%= form.number_field :stopien_postepu %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
