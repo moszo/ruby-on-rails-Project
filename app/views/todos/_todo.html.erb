@@ -1,32 +1,31 @@
 <div id="<%= dom_id todo %>">
-  <p>
-    <strong>Nr:</strong>
-    <%= todo.nr %>
-  </p>
+<style>
+      .circle {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        background: #fff;
+        border: 6px solid #000;
+        color: #000;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        margin: 0 auto;
+      }
 
-  <p>
-    <strong>Termin:</strong>
-    <%= todo.termin %>
-  </p>
+</style>
 
-  <p>
-    <strong>Nazwa:</strong>
-    <%= todo.nazwa %>
+<div class="jumbotron">
+  <h1  class="circle"><%= todo.nr %></h1>
+  <h1 class="display-4"><%= todo.nazwa %></h1><h2><%= todo.termin %></h2>
+  <p class="lead"><%= todo.tresc %></p>
+  <p class="h4">Priorytet: <%= todo.waznosc %></p>
+  <p class="h4">Postęp: <%= todo.stopien_postepu %></p>
+  <hr class="my-4">
   </p>
-
-  <p>
-    <strong>Tresc:</strong>
-    <%= todo.tresc %>
-  </p>
-
-  <p>
-    <strong>Waznosc:</strong>
-    <%= todo.waznosc %>
-  </p>
-
-  <p>
-    <strong>Stopien postepu:</strong>
-    <%= todo.stopien_postepu %>
-  </p>
-
 </div>
+
+
+

@@ -3,8 +3,9 @@
 <%= render @todo %>
 
 <div>
-  <%= link_to "Edit this task", edit_todo_path(@todo) %> |
-  <%= link_to "Back to list", todos_path %>
-
-  <%= button_to "Destroy this task", @todo, method: :delete %>
+  <%= link_to "Edit this task", edit_todo_path(@todo) , class: "btn btn-primary" %>
+  <br><br>
+  <%= link_to "Back to list", todos_path, class: "btn btn-primary" %>
+  <br><br>
+  <%= button_to "Delate this task", @todo, method: :delete, class: "btn btn-primary" %>
 </div>
