@@ -33,12 +33,12 @@
 
   <div>
     <%= form.label :waznosc, style: "display: block" %>
-    <%= form.number_field :waznosc %>
+    <%= form.number_field :waznosc, in: 1..3 %>
   </div>
 
   <div>
     <%= form.label :stopien_postepu, style: "display: block" %>
-    <%= form.number_field :stopien_postepu %>
+    <%= form.number_field :stopien_postepu, in: 1..5 %>
   </div>
 
   <div>
