@@ -4,8 +4,7 @@
 <table class="table table-striped table-borded table-hover">
   <thead class="thead-dark", bgcolor="4963F1">
     <tr>
-      <th>nr.</th>
-      <th>termin:</th>
+      <th>data:</th>
       <th>nazwa:</th>
       <th>treść:</th>
       <th>ważność:</th>
@@ -16,13 +15,12 @@
   <tbody bgcolor="9BA7E7">
     <% @todos.each do |todo| %>
       <tr>
-        <td width="60"><%= todo.nr %></td>
         <td width="100"><%=todo.termin %></td>
         <td width="360"><%=todo.nazwa %></td>
         <td width="660"><%= todo.tresc %></td>
         <td width="100"><%=todo.waznosc %></td>
         <td width="60"><%=todo.stopien_postepu %></td>
-        <td width ="140"> <%= link_to "Show this task", todo %></td>
+        <td width ="140"> <%= link_to "Show", todo , class:"btn btn-success"%></td>
 
         
          

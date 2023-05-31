@@ -8,28 +8,22 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="http://127.0.0.1:3000/home/about">About <span class="sr-only">(current)</span></a>
-      </li>
+ 
       <li class="nav-item">
         <a class="nav-link" href="http://127.0.0.1:3000/todos">ToDO list</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://127.0.0.1:3000/friends">Friends list</a>
-      </li>
+
       <li class="nav-item">
       <a class="nav-link" href="http://127.0.0.1:3000/signup">Sign Up</a>
       </li>
       <% if current_user %>
-  <%= link_to 'Log Out', logout_path, method: :delete %>
-<% else %>
-  <%= link_to 'Log In', login_path %>
-<% end %>
+          <%= link_to 'Log Out', logout_path, method: :delete, class: "btn btn-primary" %>
+ 
+      <% else %>
+          <%= link_to 'Log In', login_path ,class: "btn btn-primary"%>
+      <% end %>
+
       <li class="nav-item dropdown">
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>

@@ -1,10 +1,10 @@
 <div id="<%= dom_id todo %>">
 <style>
       .circle {
+        background: #fff;
         border-radius: 50%;
         width: 100px;
         height: 100px;
-        background: #fff;
         border: 6px solid #000;
         color: #000;
         text-align: center;
@@ -18,10 +18,9 @@
 </style>
 
 <div class="jumbotron">
-  <h1  class="circle"><%= todo.nr %></h1>
+  <h1  class="circle"><%= todo.waznosc %></h1>
   <h1 class="display-4"><%= todo.nazwa %></h1><h2><%= todo.termin %></h2>
   <p class="lead"><%= todo.tresc %></p>
-  <p class="h4">Priorytet: <%= todo.waznosc %></p>
   <p class="h4">Postęp: <%= todo.stopien_postepu %></p>
   <hr class="my-4">
   </p>
