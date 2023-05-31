@@ -17,6 +17,14 @@
       <li class="nav-item">
         <a class="nav-link" href="http://127.0.0.1:3000/friends">Friends list</a>
       </li>
+      <li class="nav-item">
+      <a class="nav-link" href="http://127.0.0.1:3000/signup">Sign Up</a>
+      </li>
+      <% if current_user %>
+  <%= link_to 'Log Out', logout_path, method: :delete %>
+<% else %>
+  <%= link_to 'Log In', login_path %>
+<% end %>
       <li class="nav-item dropdown">
     </ul>
     <form class="form-inline my-2 my-lg-0">

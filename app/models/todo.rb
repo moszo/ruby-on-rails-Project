@@ -1,2 +1,3 @@
 class Todo < ApplicationRecord
-end
+    belongs_to :user
+  end

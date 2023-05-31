@@ -1,0 +1,14 @@
+<h1>Logowanie</h1>
+<%= form_with(url: login_path, local: true) do |f| %>
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.submit "Zaloguj się" %>
+  </div>
+<% end %>

@@ -1,0 +1,26 @@
+<!-- app/views/users/new.html.erb -->
+<h1>Rejestracja</h1>
+
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<%= form_with(model: @user, url: users_path, local: true) do |f| %>
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div>
+    <%= f.submit "Zarejestruj się" %>
+  </div>
+<% end %>
