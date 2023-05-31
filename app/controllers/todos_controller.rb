@@ -7,6 +7,11 @@ class TodosController < ApplicationController
   end
 
   # ...
+  def show
+  end
+
+  def edit
+  end
 
   # GET /todos/new
   def new
@@ -45,7 +50,15 @@ class TodosController < ApplicationController
     end
   end
 
-  # ...
+    # DELETE /todos/1 or /todos/1.json
+  def destroy
+    @todo.destroy
+
+    respond_to do |format|
+      format.html { redirect_to todos_url, notice: "Todo was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
 
   private
 
@@ -57,3 +70,7 @@ class TodosController < ApplicationController
     params.require(:todo).permit(:nr, :termin, :nazwa, :tresc, :waznosc, :stopien_postepu)
   end
 end
+  
+
+
+
