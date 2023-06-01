@@ -1,4 +1,5 @@
 class TodosController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
 
   # GET /todos or /todos.json
@@ -7,6 +8,7 @@ class TodosController < ApplicationController
   end
 
   # ...
+  
   def show
   end
 
@@ -19,7 +21,7 @@ class TodosController < ApplicationController
   end
 
   # ...
-
+  
   # POST /todos or /todos.json
   def create
     @todo = current_user.todos.build(todo_params)
@@ -36,7 +38,7 @@ class TodosController < ApplicationController
   end
 
   # ...
-
+  
   # PATCH/PUT /todos/1 or /todos/1.json
   def update
     respond_to do |format|
@@ -50,7 +52,7 @@ class TodosController < ApplicationController
     end
   end
 
-    # DELETE /todos/1 or /todos/1.json
+  # DELETE /todos/1 or /todos/1.json
   def destroy
     @todo.destroy
 
@@ -62,6 +64,12 @@ class TodosController < ApplicationController
 
   private
 
+  def authenticate_user!
+    unless current_user
+      redirect_to login_path, alert: "Musisz się zalogować, aby kontynuować."
+    end
+  end
+
   def set_todo
     @todo = current_user.todos.find(params[:id])
   end
@@ -70,7 +78,3 @@ class TodosController < ApplicationController
     params.require(:todo).permit(:nr, :termin, :nazwa, :tresc, :waznosc, :stopien_postepu)
   end
 end
-  
-
-
-
