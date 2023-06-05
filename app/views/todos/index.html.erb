@@ -14,7 +14,7 @@
   <tbody bgcolor="9BA7E7">
     <% @todos.each do |todo| %>
       <tr>
-        <td width="100"><%=todo.termin %></td>
+        <td width="100"><%=Date.parse(todo.termin).strftime("%e %B, %Y")%></td>
         <td width="360"><%=todo.nazwa %></td>
         <td width="100"><%=todo.waznosc %></td>
         <td width="60"><%=todo.stopien_postepu %></td>
