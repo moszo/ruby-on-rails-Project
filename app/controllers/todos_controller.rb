@@ -2,27 +2,20 @@ class TodosController < ApplicationController
   before_action :authenticate_user!
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
 
-  # GET /todos or /todos.json
   def index
     @todos = current_user.todos
   end
 
-  # ...
-  
   def show
   end
 
   def edit
   end
 
-  # GET /todos/new
   def new
     @todo = current_user.todos.build
   end
 
-  # ...
-  
-  # POST /todos or /todos.json
   def create
     @todo = current_user.todos.build(todo_params)
 
@@ -36,10 +29,6 @@ class TodosController < ApplicationController
       end
     end
   end
-
-  # ...
-  
-  # PATCH/PUT /todos/1 or /todos/1.json
   def update
     respond_to do |format|
       if @todo.update(todo_params)
@@ -52,7 +41,7 @@ class TodosController < ApplicationController
     end
   end
 
-  # DELETE /todos/1 or /todos/1.json
+
   def destroy
     @todo.destroy
 

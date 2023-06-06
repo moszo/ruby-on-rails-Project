@@ -17,18 +17,18 @@ class SessionsController < ApplicationController
     if user && user.authenticate(password)
       # Logowanie powiodło się
       session[:user_id] = user.id
-      redirect_to todos_url, notice: "Zostałeś zalogowany"
+      redirect_to todos_url, alert: "Zostałeś zalogowany"
     else
       # Logowanie nie powiodło się
-      flash.now[:alert] = "Nieprawidłowy email lub hasło"
-      render 'new'
+      redirect_to login_url, alert: "Logowanie nie powiodło się, spróbuj ponownie"
+
     end
   end
 
   def destroy
     # Wylogowanie użytkownika
     session[:user_id] = nil
-    redirect_to root_path, notice: "Zostałeś wylogowany"
+    redirect_to root_path, alert: "Zostałeś wylogowany"
   end
 
   private
